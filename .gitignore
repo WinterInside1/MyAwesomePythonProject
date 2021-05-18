@@ -130,3 +130,9 @@ dmypy.json
 
 # Ds_store
 **/.DS_Store
+
+#idea
+**/.idea
+
+**/.Makefile.swp
+
