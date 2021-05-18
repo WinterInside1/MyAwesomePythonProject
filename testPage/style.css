@@ -7,6 +7,7 @@ html {
 }
 
 body {
+  background-color: rgb(104, 79, 79);
   margin: 0;
   height: 100%;
   display: flex;
@@ -15,15 +16,16 @@ body {
 }
 
 .main {
+  
   flex-grow: 1;
 }
 
 .header {
   height: 100px;
-  background-color: rgb(231, 231, 231);
+  background-color: rgba(129, 88, 94, 0.267);
 }
 
 .footer {
-  background-color: rgb(231, 231, 231);
+  background-color: rgb(121, 100, 100);
 
 }

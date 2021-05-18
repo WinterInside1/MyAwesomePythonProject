@@ -7,11 +7,7 @@ const firstTableData = document.getElementById('first_table_data');
 const timerNode = document.getElementById('timer');
 const updateTimerButton = document.getElementById('button-addon2');
 
-const loadData = async () => {
-  const res = await fetch('https://jsonplaceholder.typicode.com/users');
-  const data = await res.json();
-  users = data;
-};
+
 
 const startTimer = () => {
   timer = 15;
@@ -41,3 +37,25 @@ window.addEventListener('load', async () => {
     startTimer();
   });
 });
+
+const tbody = document.getElementById('tbody');
+for ( i = 1; i < 12; i++) {
+  
+  let index = i
+  let sum = []
+  console.log(sum)
+  let username = ["dima","nikita","stas","gena","ira","nikolay","petr","ivan","akakiy","evgeniy","kolya","max"]
+  tbody.innerHTML += `
+<tr>
+                <th scope="row">${index}</th>
+                <td>${username[i]}</td>
+                <td>${sum.sort((a,b)=> b-a)}</td>
+              </tr>
+
+              `
+
+
+
+
+}
+
