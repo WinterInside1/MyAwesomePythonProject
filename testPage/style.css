@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background-color: rgb(104, 79, 79);
+  background-color: #a1dffb;
   margin: 0;
   height: 100%;
   display: flex;
@@ -22,10 +22,10 @@ body {
 
 .header {
   height: 100px;
-  background-color: rgba(129, 88, 94, 0.267);
+  background-color: #f9de59;
 }
 
 .footer {
-  background-color: rgb(121, 100, 100);
+  background-color: #f98365;
 
 }
