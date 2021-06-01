@@ -5,12 +5,12 @@
     {% if user.is_authenticated %}
       <form action="{% url 'add-remove-watchlist' listing.id %}" method="POST">
         {% csrf_token %}
-        <input type="submit" value="{{ watchlist_message }}" class="btn btn-sm btn-primary watchlist-button">
+        <input type="submit" value="{{ watchlist_message }}" class="btn btn-small btn-primary watchlist-button mb-5">
       </form>
     {% endif %}
     
     <!-- start listing section -->
-    <h2>{{ listing.title }}</h2>
+    <h1 class="mb-4">{{ listing.title }}</h1>
     
     <div class="row listing-container">
       <div class="col-md-3">
@@ -23,7 +23,7 @@
         {% if user_is_creator and listing.status %}
           <form action="{% url 'close-listing' listing.id %}" method="POST">
             {% csrf_token %}
-            <input type="submit" value="End Auction">
+            <input type="submit" class="btn btn-small btn-danger mb-3" value="End Auction">
           </form>
         {% endif %}
         
@@ -36,9 +36,9 @@
           <h4>Auction Closed</h4>
         {% endif %}
 
-        <p>{{ listing.description }}</p>
-        <p>Listed: {{ listing.date }}</p>
-        <p>Listed by: {{ listing.user.username }}</p>
+        <p><b>Description: </b>{{ listing.description }}</p>
+        <p><b>Listed: </b>{{ listing.date }}</p>
+        <p><b>Listed by: </b>{{ listing.user.username }}</p>
       </div>
     </div>
 
@@ -56,7 +56,7 @@
         </form>
       {% endif %}
 
-      <h3>Bid History</h3>
+      <h3 class="mt-5 mb-4">Bid History</h3>
       <table class="table table-striped">
         <tr>
           <th>Username</th>
@@ -70,26 +70,26 @@
       {% endfor %}
       </table>
       
-      <h3>Leave a Comment</h3>
+      <h3 class="mt-5 mb-4">Leave a Comment</h3>
       <div class="comment-section">
       <form action="{% url 'comment' listing.id %}" method="POST">
         {% csrf_token %}
-        <div class="form-group">
+        <div class="input-group mb-3">
           <input type="text" required name="comment_text" class="form-control" placeholder="Comment">
+          <div class="input-group-append">
+            <input type="submit" value="Send" class="btn btn-input btn-primary">
+          </div>
         </div>
-        <input type="submit" value="Submit" class="btn btn-sm btn-primary">
       </form>
 
-      <h3>Comments</h3>
-      <ul>
+      <h3 class="mt-5 mb-4">Comments</h3>
       {% for comment in comments %}
-        <li class="comment">
-          On {{ comment.date }}, {{ comment.user.username }} wrote:
-          <br>
-          {{ comment.comment }}
-        </li>
+          <div class="border rounded mb-2">
+            <p class="m-2 d-flex justify-content-between"><b>{{ comment.user.username }}</b> {{ comment.date }}</p>
+            <hr class="mt-0 mb-2">
+            <div class="p-2">{{ comment.comment }}</div>
+          </div>
       {% endfor %}
-      </ul>
       </div>
 
     {% endif %}

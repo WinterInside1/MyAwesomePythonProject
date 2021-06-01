@@ -188,7 +188,7 @@ def bid(request, listing_id):
                 # save listing and bid objects
                 listing.save()
                 bid.save()
-
+                #TODO make async message (email)
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-primary')
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
             else:
