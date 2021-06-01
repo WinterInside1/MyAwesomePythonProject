@@ -29,11 +29,16 @@
         
         <!-- display auction winner if there's a bid is closed -->
         {% if max_bid.bidder == user and not listing.status %}
-          <h4>You won the auction!</h4>
+
+        <div class="alert alert-primary" role="alert">
+            You won the auction!
+        </div>
         {% elif max_bid and not listing.status %}
           <h4>Auction Winner: {{ max_bid.bidder.username }}</h4>
         {% elif not max_bid and not listing.status %}
-          <h4>Auction Closed</h4>
+          <div class="alert alert-primary" role="alert">
+            Auction closed!
+          </div>
         {% endif %}
 
         <p><b>Description: </b>{{ listing.description }}</p>

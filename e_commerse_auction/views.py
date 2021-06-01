@@ -79,6 +79,7 @@ def create_listing(request):
         photo = request.POST["photo"]
         category = request.POST["category"].capitalize()
 
+
         # create new listing object with above variables gathered from create listing form:
         listing = Listing(user=user, title=title, price=price, description=description, photo=photo, category=category)
 
