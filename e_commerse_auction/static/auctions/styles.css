@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
+
+import google font
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+header {
+  padding: 1%;
+  background-color: #2a525d;
+}
+
+main {
+  padding: 3%;
+}
+
+
+h1,
+h2 {
+  font-weight: 500;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: .2em;
+  color: #ffffff;
+  background-color: #f96a6a;
+  padding: 1%;
+  border-left: solid 7px #ffffff;
+  border-radius: 5px;
+}
+
+h3 {
+  margin-top: 1em;
+}
+
+.img-small {
+  width: 100%;
+}
+
+/* tells you if you're logged in */
+.authentication-message {
+  color: #cdcccc;
+}
+
+.italic {
+  font-style: italic;
+}
+
+li {
+  list-style-type: none;
+}
+
+
+ul.nav a {
+  color: #b1c0c3;
+}
+
+ul.nav a:hover {
+  color: #537378;
+}
+
+/* main links on page */
+h3 a,
+li a,
+p a {
+  color: #f96a6a;
+}
+
+h3 a:hover,
+li a:hover,
+p a:hover {
+  color: #537378;
+  text-decoration: none;
+}
+
+
+.btn-primary {
+  background-color: #f96a6a;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #b44e4e;
+  border: none;
+}
+
+.watchlist-button {
+  background-color: #537378;
+}
+
+.watchlist-button:hover {
+  background-color: #2a525d;
+}
+
+/* comment section of listing.html */
+div.comment-section {
+  background-color: rgb(245, 245, 245);
+  padding: 1%;
+}
+
+li.comment {
+  padding: 15px 25px;
+  margin: 15px 0px;
+  background-color: rgb(235, 235, 235);
+}
+
+/* alerts */
+p.alert-primary,
+p.alert-warning {
+  background-color: #b1c0c3 !important;
+  color: #ffffff !important;
+  border: none !important;
+}
+
+/* input box */
+.form-control:focus {
+  box-shadow: 0px 0px 1px 1px #b1c0c3;
+  border: 1px solid #537378;
+}
