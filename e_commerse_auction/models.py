@@ -9,7 +9,7 @@ class User(AbstractUser):
         return f"{self.username} ({self.first_name} {self.last_name})"
 
 
-# Need at least these three models for specification:
+    # Need at least these three models for specification:
 
 class Listing(models.Model):
     # foreign key refers to the User object
