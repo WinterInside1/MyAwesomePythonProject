@@ -5,6 +5,8 @@ from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+from django.core.mail import send_mail
+from djangoProject.settings import EMAIL_HOST_USER
 
 from .models import *
 
@@ -191,6 +193,8 @@ def bid(request, listing_id):
                 bid.save()
                 #TODO make async message (email)
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-primary')
+                user = User.objects.get(username=bidder.username)
+                send_mail('Successful bid', 'Congratulations!', EMAIL_HOST_USER, [user.email] , fail_silently = False)
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
             else:
                 messages.add_message(request, messages.INFO, 'Bid is not high enough.',
