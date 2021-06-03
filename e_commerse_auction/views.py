@@ -2,11 +2,12 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.db import IntegrityError
+from django.db.models import Max
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.core.mail import send_mail
-from djangoProject.settings import EMAIL_HOST_USER
+from django_project.settings import EMAIL_HOST_USER
 
 from .models import *
 
@@ -191,7 +192,7 @@ def bid(request, listing_id):
                 # save listing and bid objects
                 listing.save()
                 bid.save()
-                #TODO make async message (email)
+
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-primary')
                 user = User.objects.get(username=bidder.username)
                 send_mail('Successful bid', 'Congratulations!', EMAIL_HOST_USER, [user.email] , fail_silently = False)
@@ -214,6 +215,8 @@ def bid(request, listing_id):
                 bid.save()
 
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-info')
+                user = User.objects.get(username=bidder.username)
+                send_mail('Successful bid', 'Congratulations!', EMAIL_HOST_USER, [user.email] , fail_silently = False)
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
             else:
                 messages.add_message(request, messages.INFO, 'Bid is not high enough.',
@@ -272,6 +275,13 @@ def close_listing(request, listing_id):
 
         if user == listing_creator:
             messages.add_message(request, messages.INFO, 'Auction closed!', extra_tags='alert alert-info')
+
+            bids = Bid.objects.filter(listing=listing)
+            bid_winner = bids[0].bidder
+            bid_owner = bids[0].listing.user
+            send_mail('You won!', 'Congratulations!', EMAIL_HOST_USER, [bid_winner.email] , fail_silently = False)
+            send_mail('The end!', 'The listing has ended.', EMAIL_HOST_USER, [bid_owner.email], fail_silently=False)
+
             # change listing status to False (which means auction is closed)
             listing.status = False
             listing.save()
