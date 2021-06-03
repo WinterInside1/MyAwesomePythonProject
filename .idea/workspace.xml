@@ -5,49 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f01a85-02d1-4c03-b436-6afa9a1003ba" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MyAwesomePythonProject/.env.dev" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyAwesomePythonProject/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.dev" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/django_project/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/django_project/asgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/django_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/django_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/django_project/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/img/background-forest.gif" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/img/background-forest.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/img/bg-masthead.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/img/bg-masthead.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/img/bg-signup.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/img/bg-signup.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/img/demo-image-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/img/demo-image-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/img/demo-image-02.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/img/demo-image-02.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/img/ipad.png" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/img/ipad.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/assets/img/mainpage_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/assets/img/mainpage_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/js/scripts.js" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/js/scripts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/static/auctions/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/static/auctions/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/category.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/category.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/create-listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/create-listing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/home-layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/home-layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/listing-categories.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/listing-categories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/listing.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/listing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/templates/auctions/watchlist.html" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/templates/auctions/watchlist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/e_commerse_auction/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/manage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MyAwesomePythonProject.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyAwesomePythonProject.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +102,7 @@
       <workItem from="1622242206463" duration="612000" />
       <workItem from="1622556150955" duration="104000" />
       <workItem from="1622556746043" duration="10858000" />
-      <workItem from="1622625631907" duration="16775000" />
+      <workItem from="1622625631907" duration="17095000" />
     </task>
     <servers />
   </component>
