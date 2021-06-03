@@ -3,9 +3,15 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.db import IntegrityError
+from django.db.models import Max
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
+<<<<<<< HEAD:MyAwesomePythonProject/e_commerse_auction/views.py
+=======
+from django.core.mail import send_mail
+from django_project.settings import EMAIL_HOST_USER
+>>>>>>> fd855c9fcb52998d3135dbb00bbc5f6e96adb8c7:e_commerse_auction/views.py
 
 from django_project.settings import EMAIL_HOST_USER
 from .models import *
@@ -277,9 +283,14 @@ def close_listing(request, listing_id):
             bids = Bid.objects.filter(listing=listing)
             bid_winner = bids[0].bidder
             bid_owner = bids[0].listing.user
+<<<<<<< HEAD:MyAwesomePythonProject/e_commerse_auction/views.py
             #print(bid_winner)
             send_mail('You won!', 'Congratulations!', EMAIL_HOST_USER, [bid_winner.email], fail_silently = False)
             send_mail('The end!', 'The listing has ended. User ', EMAIL_HOST_USER, [bid_owner.email], fail_silently=False)
+=======
+            send_mail('You won!', 'Congratulations!', EMAIL_HOST_USER, [bid_winner.email] , fail_silently = False)
+            send_mail('The end!', 'The listing has ended.', EMAIL_HOST_USER, [bid_owner.email], fail_silently=False)
+>>>>>>> fd855c9fcb52998d3135dbb00bbc5f6e96adb8c7:e_commerse_auction/views.py
 
             # change listing status to False (which means auction is closed)
             listing.status = False
