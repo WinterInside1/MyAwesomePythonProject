@@ -2,14 +2,14 @@ version: '3.7'
 
 services:
   web:
-    image: "web"
+    image: "web-auction"
     container_name: "web_auction"
     build: MyAwesomePythonProject
-    command: python3 manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 37.228.116.131:8000
     volumes:
       - ./MyAwesomePythonProject/:/app/
     ports:
-      - 8000:8000
+      - 8000:80
     env_file:
       - MyAwesomePythonProject/.env.dev
   postgres:
