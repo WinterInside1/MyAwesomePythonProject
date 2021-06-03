@@ -6,7 +6,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
 from django.core.mail import send_mail
-from djangoProject.settings import EMAIL_HOST_USER
+from django_project.settings import EMAIL_HOST_USER
 
 from .models import *
 
