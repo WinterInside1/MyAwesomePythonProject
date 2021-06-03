@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="63f01a85-02d1-4c03-b436-6afa9a1003ba" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyAwesomePythonProject/.env.dev" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/.env.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyAwesomePythonProject/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyAwesomePythonProject/django_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/django_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/e_commerse_auction/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyAwesomePythonProject/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MyAwesomePythonProject/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.prod.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -111,6 +106,7 @@
       <workItem from="1622556150955" duration="104000" />
       <workItem from="1622556746043" duration="10858000" />
       <workItem from="1622625631907" duration="17095000" />
+      <workItem from="1622708264696" duration="10039000" />
     </task>
     <servers />
   </component>
