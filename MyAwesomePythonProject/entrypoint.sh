@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
-  if [ "$Database" = "postgres" ]
+  if [ "$PG_HOST" = "postgres" ]
   then
       echo "Waiting for postgres"
-      while ! nc -z $SQL_HOSt $SQL_PORT; do
+      while ! nc -z $PG_HOST $PG_PORT; do
         sleep 0.1
       done
       echo "PgSQL started"

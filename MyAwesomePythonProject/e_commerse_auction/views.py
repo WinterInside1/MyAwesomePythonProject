@@ -1,14 +1,13 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from django.core.mail import send_mail
 from django.db import IntegrityError
-from django.db.models import Max
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from django.core.mail import send_mail
-from django_project.settings import EMAIL_HOST_USER
 
+from django_project.settings import EMAIL_HOST_USER
 from .models import *
 
 
@@ -265,22 +264,22 @@ def category(request, category):
         "category": category
     })
 
-
 def close_listing(request, listing_id):
     if request.method == "POST":
         # get user and compare to user who created listing
-        user = request.user
-        listing = Listing.objects.get(pk=listing_id)
+        user =  request.user
+        listing =   Listing.objects.get(pk=listing_id)
         listing_creator = listing.user
 
-        if user == listing_creator:
+        if  user == listing_creator:
             messages.add_message(request, messages.INFO, 'Auction closed!', extra_tags='alert alert-info')
 
             bids = Bid.objects.filter(listing=listing)
             bid_winner = bids[0].bidder
             bid_owner = bids[0].listing.user
+            #print(bid_winner)
             send_mail('You won!', 'Congratulations!', EMAIL_HOST_USER, [bid_winner.email], fail_silently = False)
-            send_mail('The end!', 'The listing has ended.', EMAIL_HOST_USER, [bid_owner.email], fail_silently=False)
+            send_mail('The end!', 'The listing has ended. User ', EMAIL_HOST_USER, [bid_owner.email], fail_silently=False)
 
             # change listing status to False (which means auction is closed)
             listing.status = False
