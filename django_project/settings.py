@@ -129,8 +129,8 @@ except ImportError:
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'noreply.ecommerceauction@gmail.com'
-EMAIL_HOST_PASSWORD = 'wqLnVe9XyBE7iyq'
+EMAIL_HOST_USER = 'noreply.ecommerse@gmail.com'
+EMAIL_HOST_PASSWORD = 'CuB7GZa8E8ntgTM'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False

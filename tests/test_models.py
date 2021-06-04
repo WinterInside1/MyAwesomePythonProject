@@ -114,6 +114,9 @@ class CommentModelTest(TestCase):
         self.assertEquals(test_comment.__str__(), f'Date:{test_comment.date} Comment:{test_comment.comment} Listing:{test_comment.listing}')
 
     def test_comment_max_length(self):
+        """
+        Test Comment max_length
+        """
         test_comment = self.comment
         max_length = test_comment._meta.get_field('comment').max_length
         self.assertEquals(max_length, 256)
