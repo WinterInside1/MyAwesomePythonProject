@@ -15,10 +15,10 @@ class Listing(models.Model):
     # foreign key refers to the User object
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="listings")
     title = models.CharField(max_length=64)
-    price = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.DecimalField(max_digits=80, decimal_places=3)
     description = models.TextField(max_length=256)
     date = models.DateTimeField(auto_now_add=True)
-    photo = models.URLField(max_length=200, blank=True)
+    photo = models.URLField(max_length=2000, blank=True)
     category = models.CharField(max_length=32, blank=True)
     status = models.BooleanField(default=True)
 
@@ -29,7 +29,7 @@ class Listing(models.Model):
 
 class Bid(models.Model):
     listing = models.ForeignKey(Listing, on_delete=models.CASCADE, related_name="bids")
-    price = models.DecimalField(max_digits=8, decimal_places=2)
+    price = models.DecimalField(max_digits=80, decimal_places=3)
     bidder = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):

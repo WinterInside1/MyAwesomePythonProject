@@ -5,11 +5,11 @@ services:
     image: "web-auction"
     container_name: "web_auction"
     build: MyAwesomePythonProject
-    command: python3 manage.py runserver 37.228.116.131:8000
+    command: sh -c "python3 manage.py runserver 0.0.0.0:8000"
     volumes:
       - ./MyAwesomePythonProject/:/app/
     ports:
-      - 8000:80
+      - 8000:8000
     env_file:
       - MyAwesomePythonProject/.env.dev
   postgres:

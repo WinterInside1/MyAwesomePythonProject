@@ -1,4 +1,8 @@
 #!/usr/bin/env sh
+
+
+  set -e
+
   if [ "$PG_HOST" = "postgres" ]
   then
       echo "Waiting for postgres"
@@ -7,6 +11,11 @@
       done
       echo "PgSQL started"
   fi
+
+
+
+  python manage.py collectstatic --noinput
+
 
 
   exec "$@"
