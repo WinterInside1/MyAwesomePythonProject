@@ -1,0 +1,57 @@
+Index: docker-compose.prod.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>version: '3.7'\n\nservices:\n  web:\n    image: \"web\"\n    container_name: \"web_auction\"\n    build: MyAwesomePythonProject\n    command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000\n    ports:\n      - 8000:8000\n    env_file:\n      - MyAwesomePythonProject/.env.prod\n      - depends_on:\n          - postgres\n  postgres:\n    image: postgres:12.0-alpine\n    container_name: \"postgres_test\"\n    env_file:\n       - MyAwesomePythonProject/.env.prod\n    volumes:\n      - postgres_data:/var/lib/postgresql/data/\n\nvolumes:\n  postgres_data:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose.prod.yml b/docker-compose.prod.yml
+--- a/docker-compose.prod.yml	(revision 7ec8e3521f71f3dc1129f7b56bdc0a6ebdc28445)
++++ b/docker-compose.prod.yml	(date 1622835504370)
+@@ -2,23 +2,34 @@
+ 
+ services:
+   web:
+-    image: "web"
+-    container_name: "web_auction"
++    image: "web_prod"
++    container_name: "web_auction_prod"
+     build: MyAwesomePythonProject
+-    command: gunicorn hello_django.wsgi:application --bind 0.0.0.0:8000
+-    ports:
+-      - 8000:8000
++    command: gunicorn django_project.wsgi:application --bind 0.0.0.0:8000
++    expose:
++      - 8000
++    volumes:
++      - static_data:/vol/web/static
+     env_file:
+       - MyAwesomePythonProject/.env.prod
+-      - depends_on:
+-          - postgres
++    depends_on:
++       - postgres
+   postgres:
+     image: postgres:12.0-alpine
+-    container_name: "postgres_test"
++    container_name: "postgres_prod"
+     env_file:
+        - MyAwesomePythonProject/.env.prod
+     volumes:
+       - postgres_data:/var/lib/postgresql/data/
+-
++  nginx:
++    build:
++      context: ./nginx
++    volumes:
++      - static_data:/vol/static
++    ports:
++      - 1337:80
++    depends_on:
++      - web
+ volumes:
+-  postgres_data:
+\ No newline at end of file
++  postgres_data:
++  static_data:
+\ No newline at end of file

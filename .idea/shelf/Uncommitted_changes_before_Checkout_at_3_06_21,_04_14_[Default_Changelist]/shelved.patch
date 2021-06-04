@@ -1,0 +1,38 @@
+Index: docker-compose.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>version: '3.7'\n\nservices:\n  e_commerce_auction:\n    build: ./MyAwesomePythonProject\n    command: python manage.py runserver 0.0.0.0:8000\n    volumes:\n      - ./MyAwesomePythonProject/:/usr/src/MyAwesomePythonProject\n    ports:\n      - 8000:8000\n    env_file:\n      - ./.env.dev
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/docker-compose.yml b/docker-compose.yml
+--- a/docker-compose.yml	(revision f2a8a3b9a0987bcd2d0d0df53233b1a2b72d3925)
++++ b/docker-compose.yml	(date 1622682788562)
+@@ -2,6 +2,8 @@
+ 
+ services:
+   e_commerce_auction:
++    image: "web"
++    container_name: "web_auction"
+     build: ./MyAwesomePythonProject
+     command: python manage.py runserver 0.0.0.0:8000
+     volumes:
+@@ -9,4 +11,15 @@
+     ports:
+       - 8000:8000
+     env_file:
+-      - ./.env.dev
+\ No newline at end of file
++      - ./.env.dev
++  postgres:
++    image: postgres:12.0-alpine
++    container_name: "aboba"
++    expose:
++      - 5432
++    ports:
++      - "5432:5432"
++    env_file:
++      - ./variables/dev.env
++    volumes:
++      - postgres_data:/var/lib/postgresql/data/
+\ No newline at end of file
