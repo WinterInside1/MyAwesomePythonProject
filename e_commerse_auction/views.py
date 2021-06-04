@@ -10,6 +10,7 @@ from django.core.mail import send_mail
 from django_project.settings import EMAIL_HOST_USER
 
 from .models import *
+from threading import Thread
 
 
 def index(request):
@@ -194,6 +195,10 @@ def bid(request, listing_id):
                 bid.save()
 
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-primary')
+
+                t = Thread()
+                t.daemon = True
+                t.start()
                 user = User.objects.get(username=bidder.username)
                 send_mail('Successful bid', 'Congratulations!', EMAIL_HOST_USER, [user.email] , fail_silently = False)
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
@@ -215,6 +220,10 @@ def bid(request, listing_id):
                 bid.save()
 
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-info')
+
+                t = Thread()
+                t.daemon = True
+                t.start()
                 user = User.objects.get(username=bidder.username)
                 send_mail('Successful bid', 'Congratulations!', EMAIL_HOST_USER, [user.email] , fail_silently = False)
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
