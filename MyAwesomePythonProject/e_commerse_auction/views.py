@@ -1,14 +1,16 @@
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.core.mail import send_mail
 from django.db import IntegrityError
+from django.db.models import Max
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-
+from django.core.mail import send_mail
 from django_project.settings import EMAIL_HOST_USER
+
 from .models import *
+from threading import Thread
 
 
 def index(request):
@@ -193,6 +195,10 @@ def bid(request, listing_id):
                 bid.save()
 
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-primary')
+
+                t = Thread()
+                t.daemon = True
+                t.start()
                 user = User.objects.get(username=bidder.username)
                 send_mail('Successful bid', 'Congratulations!', EMAIL_HOST_USER, [user.email] , fail_silently = False)
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
@@ -214,6 +220,10 @@ def bid(request, listing_id):
                 bid.save()
 
                 messages.add_message(request, messages.INFO, 'Bid successful!', extra_tags='alert alert-info')
+
+                t = Thread()
+                t.daemon = True
+                t.start()
                 user = User.objects.get(username=bidder.username)
                 send_mail('Successful bid', 'Congratulations!', EMAIL_HOST_USER, [user.email] , fail_silently = False)
                 return HttpResponseRedirect(reverse("listing", args=(listing_id,)))
@@ -264,22 +274,22 @@ def category(request, category):
         "category": category
     })
 
+
 def close_listing(request, listing_id):
     if request.method == "POST":
         # get user and compare to user who created listing
-        user =  request.user
-        listing =   Listing.objects.get(pk=listing_id)
+        user = request.user
+        listing = Listing.objects.get(pk=listing_id)
         listing_creator = listing.user
 
-        if  user == listing_creator:
+        if user == listing_creator:
             messages.add_message(request, messages.INFO, 'Auction closed!', extra_tags='alert alert-info')
 
             bids = Bid.objects.filter(listing=listing)
             bid_winner = bids[0].bidder
             bid_owner = bids[0].listing.user
-            #print(bid_winner)
-            send_mail('You won!', 'Congratulations!', EMAIL_HOST_USER, [bid_winner.email], fail_silently = False)
-            send_mail('The end!', 'The listing has ended. User ', EMAIL_HOST_USER, [bid_owner.email], fail_silently=False)
+            send_mail('You won!', 'Congratulations!', EMAIL_HOST_USER, [bid_winner.email] , fail_silently = False)
+            send_mail('The end!', 'The listing has ended.', EMAIL_HOST_USER, [bid_owner.email], fail_silently=False)
 
             # change listing status to False (which means auction is closed)
             listing.status = False

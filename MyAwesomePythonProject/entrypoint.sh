@@ -15,6 +15,7 @@
 
 
   python manage.py collectstatic --noinput
+  python coverage run manage.py tests
 
 
 
