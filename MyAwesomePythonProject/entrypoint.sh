@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-
   set -e
 
   if [ "$PG_HOST" = "postgres" ]
@@ -15,7 +14,6 @@
 
 
   python manage.py collectstatic --noinput
-  python coverage run manage.py tests
 
 
 
