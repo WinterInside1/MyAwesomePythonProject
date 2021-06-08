@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 from django.contrib.auth import SESSION_KEY
+from django.utils import timezone
 
 from e_commerse_auction.models import Listing
 from e_commerse_auction.views import *
@@ -14,7 +15,7 @@ class IndexViewTest(TestCase):
 
 class LoginViewTest(TestCase):
     def setUp(self):
-        self.user = User.objects.create(username='test', password='test', email='test@mail.ru')
+        self.user = User.objects.create(username='tester', password='tester', email='test@mail.ru')
         self.user.save()
 
     #самописный User перекрывает встроенного
