@@ -21,8 +21,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
   nginx:
-    build:
-      context: ./nginx
+    image: mr1marozik/web_nginx:1.0
     volumes:
       - static_data:/app/web/static
     ports:
