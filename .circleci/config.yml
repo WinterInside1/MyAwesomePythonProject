@@ -24,6 +24,7 @@ workflows:
           filters:
             branches:
               only: master
+<<<<<<< HEAD
       - deploy:
           requires:
             - build
@@ -31,3 +32,6 @@ workflows:
             branches:
               only: master
 
+=======
+     
+>>>>>>> 09a9a46f69c633f716ce8748e795dd9dd62e355b
