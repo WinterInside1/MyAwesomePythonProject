@@ -9,7 +9,7 @@ jobs:
       - run:
           name: docker login and pull base images
           command: |
-            docker login -u "mr1marozik" -p "bender1591103ASAS"
+            docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
       - run:
           name: Build main images
           command: |
@@ -30,3 +30,4 @@ workflows:
           filters:
             branches:
               only: master
+
