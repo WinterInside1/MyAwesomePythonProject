@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   web:
-    image: "web_prod"
+    image: mr1marozik/web_prod:1.0
     container_name: "web_auction_prod"
     build: MyAwesomePythonProject
     command: gunicorn django_project.wsgi:application --bind 0.0.0.0:8000
