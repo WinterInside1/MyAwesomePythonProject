@@ -2,23 +2,20 @@ version: 2
 jobs:
   build:
     docker:
-      - image:
+      - image:  circleci/python:3.8
     steps:
       - checkout
       - setup_remote_docker
-      - add_ssh_keys:
-          fingerprints:
-            - "SHA256:TV0SwuSphd0F5xF/FfbDC46XOqQXVeMKFSPd/5mr8fc dimabeliy@MacBook-Pro-dima.local"
       - run:
           name: docker login and pull base images
           command: |
-            docker login -u "${DOCKER_LOGIN}" -p "${DOCKER_PASSWORD}"
+            docker login -u "mr1marozik" -p "bender1591103ASAS"
       - run:
           name: Build main images
           command: |
-            docker build -t bot:app .
-            docker tag bot:app "${DOCKERHUB}/${APP_NAME}:bot.release"
-            docker push "${DOCKERHUB}/${APP_NAME}:bot.release"
+            docker-compose -f docker-compose.prod.yml up --build -d
+            docker tag web_prod:1.0  "mr1marozik/web_prod:1.0"
+            docker push "mr1marozik/web_prod:1.0"
   test:
   deploy:
     machine:
